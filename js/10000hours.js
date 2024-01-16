@@ -32,7 +32,7 @@ function calculator(){
 
     setTimeout(function (){
         fieldResult.innerText = fieldValue.value;
-        timeResult.innerText = Number((10000/timeValue_int),10);
+        timeResult.innerText = Math.floor(10000/timeValue_int);
         loading.style.display = 'none';
         result.style.display = 'flex';
 
@@ -52,7 +52,7 @@ function closeModal(){
 function copyUrl(){
     let url = window.location.href;
 
-    navigator.clipboard.writeText(url).them(()=>{
+    navigator.clipboard.writeText(url).then(()=>{
         alert("URL 복사되었습니다.");
     });
 }
